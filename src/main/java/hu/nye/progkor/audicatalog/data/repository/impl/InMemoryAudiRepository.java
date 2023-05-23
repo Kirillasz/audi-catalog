@@ -6,9 +6,9 @@ import hu.nye.progkor.audicatalog.data.model.Audi;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@org.springframework.stereotype.Repository
+
 public class InMemoryAudiRepository implements Repository<Audi, Long> {
-    private static final Map<Long, Audi> STORAGE = new HashMap<Long, Audi>();
+    private static final Map<Long, Audi> STORAGE = new HashMap<>();
 
     @Override
     public Audi save(Audi item) {
