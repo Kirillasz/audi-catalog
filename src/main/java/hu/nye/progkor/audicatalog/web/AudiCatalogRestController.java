@@ -11,30 +11,35 @@ import java.util.List;
 @RequestMapping("/api/v1/audis")
 public class AudiCatalogRestController {
     private final AudiService audiService;
+
     @Autowired
     public AudiCatalogRestController(AudiService audiService) {
         this.audiService = audiService;
     }
+
     //CRUD
     @GetMapping("/{id}")
-    public Audi getAudiById(@PathVariable Long id){
+    public Audi getAudiById(@PathVariable Long id) {
         return audiService.retvieveAudiById(id);
     }
 
     @GetMapping
-    public List<Audi> getAllAudi(){
+    public List<Audi> getAllAudi() {
         return audiService.retrieveAllAudi();
     }
+
     @PostMapping
-    public Audi createAudi(@RequestBody Audi audi){
+    public Audi createAudi(@RequestBody Audi audi) {
         return audiService.createAudi(audi);
     }
+
     @PutMapping
-    public  Audi updateAudi(@RequestBody Audi audi){
+    public Audi updateAudi(@RequestBody Audi audi) {
         return audiService.updateAudi(audi);
     }
+
     @DeleteMapping("/{id}")
-    public void deleteAudiByID(@PathVariable Long id){
+    public void deleteAudiByID(@PathVariable Long id) {
         audiService.deleteAudiById(id);
     }
 }
